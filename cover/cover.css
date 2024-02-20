@@ -1,0 +1,57 @@
+.images{
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    position: absolute;
+    border-radius: 1.8%;
+}
+
+.play{
+    width: 100px;
+    height:100px;
+    z-index: 2;
+    position:absolute;
+    cursor: pointer;
+    left: 50px;
+    top:40px;
+
+}
+
+h2, h3 {
+    display: inline;
+    margin-left: 250px;
+}
+
+.gg1 {
+    position: absolute;
+    left: 10px;
+}
+
+.gg2{
+    position:absolute;
+    left:700px;
+}
+
+.audio{
+    position:absolute;
+    top:170px;
+    width: 200px;
+    height: 30px;
+    background-color: rgb(247, 245, 245);
+    z-index: 3;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+}
+
+audio{
+    width: 200px;
+    height: 30px;
+    z-index: 4;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display {
+    display: none !important;
+}

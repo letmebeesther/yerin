@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>옛날 타자기 효과</title>
+    <style>
+        #output1 {
+            font-family: 'Roboto', sans-serif; /* 간결한 산세리프체 */
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #output2{
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function printTypewriterEffect1(text, speed) {
+            return new Promise(resolve => {
+                var index = 0;
+                var outputElement = document.getElementById("output1");
+
+                function printNextChar() {
+                    if (text[index] === '\n') {
+                        outputElement.innerHTML += "<br>";
+                    } else {
+                        outputElement.innerHTML += text.charAt(index);
+                    }
+
+                    index++;
+
+                    if (index < text.length) {
+                        setTimeout(printNextChar, speed);
+                    } else {
+                        // 모든 글자 출력 후 개행 추가
+                        outputElement.innerHTML += "<br>";
+                        resolve(); // 작업이 완료되면 Promise를 resolve
+                    }
+                }
+
+                printNextChar();
+            });
+        }
+
+        function printTypewriterEffect2(text, speed) {
+            var outputElement = document.getElementById("output2");
+
+            function printNextChar(index = 0) {
+                if (text[index] === '\n') {
+                    outputElement.innerHTML += "<br>";
+                } else {
+                    outputElement.innerHTML += text.charAt(index);
+                }
+
+                index++;
+
+                if (index < text.length) {
+                    setTimeout(() => printNextChar(index), speed);
+                } else {
+                    // 모든 글자 출력 후 개행 추가
+                    outputElement.innerHTML += "<br>";
+                }
+            }
+
+            return new Promise(resolve => {
+                // 두 번째 함수의 작업이 완료되면 Promise를 resolve
+                printNextChar();
+                resolve();
+            });
+        }
+    </script>
+</head>
+<body>
+
+<div id="output1"></div>
+<br>
+<div id="output2"></div>
+
+<script>
+    // 사용 예시
+    var textToPrint1 = "Hi! My name is Yerin Beak\n\nWelcome to my zone";
+    var textToPrint2 = "Shall we play some music?"
+
+    printTypewriterEffect1(textToPrint1, 50)
+        .then(() => printTypewriterEffect2(textToPrint2, 50));
+</script>
+
+</body>
+</html>
