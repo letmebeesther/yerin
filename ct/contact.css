@@ -1,0 +1,16 @@
+textarea{
+    width:500px;
+    height:200px;
+    resize: none;
+}
+
+#forsure{
+    width: 100px;
+    height: 30px;
+    font-size: large;
+}
+
+hr{
+    width: 60%;
+    position:absolute;
+}
