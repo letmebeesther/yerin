@@ -1,0 +1,51 @@
+.body{
+    background-color:beige;
+    border-radius: 1.5%;
+    position: relative;
+    width: 900px;
+    height: 1000px;
+}
+
+.contain{
+    position:relative;
+    left: 50px;
+    top:30px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#album{
+    width: 400px;
+    height: 400px;
+}
+
+.songs {
+    position: absolute;
+    left:500px;
+    top:50px;
+}
+
+audio{
+    position: relative;
+    height: 30px;
+    width: 300px;
+    top:-10px;
+    left:-15px;
+}
+
+audio::-webkit-media-controls-panel{
+    background-color:beige;
+}
+
+.songs > h3 {
+    position:relative;
+}
+
+#introId{
+    width: 45%;
+    position: relative;
+    left: -245px;
+}
+
+video{
+    width: 400px;
+}
